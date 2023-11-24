@@ -37,6 +37,7 @@ int main(void)
 	}
 
 	while (1) {
+/*
 		for (pulse_red = 0U; pulse_red <= red_pwm_led.period;
 		     pulse_red += STEP_SIZE) {
 			ret = pwm_set_pulse_dt(&red_pwm_led, pulse_red);
@@ -71,6 +72,28 @@ int main(void)
 				}
 			}
 		}
+	*/
+	ret = pwm_set_pulse_dt(&red_pwm_led, PWM_MSEC(5));
+	ret = pwm_set_pulse_dt(&green_pwm_led, PWM_MSEC(5));
+	ret = pwm_set_pulse_dt(&blue_pwm_led, PWM_MSEC(10));
+
+k_sleep(K_SECONDS(5));
+	ret = pwm_set_pulse_dt(&red_pwm_led, PWM_MSEC(4));
+	ret = pwm_set_pulse_dt(&green_pwm_led, PWM_MSEC(4));
+	ret = pwm_set_pulse_dt(&blue_pwm_led, PWM_MSEC(4));
+
+k_sleep(K_SECONDS(5));
+
+	ret = pwm_set_pulse_dt(&red_pwm_led, PWM_MSEC(1));
+	ret = pwm_set_pulse_dt(&green_pwm_led, PWM_MSEC(1));
+	ret = pwm_set_pulse_dt(&blue_pwm_led, PWM_MSEC(5));
+
+	k_sleep(K_SECONDS(5));
+	ret = pwm_set_pulse_dt(&red_pwm_led, PWM_MSEC(5));
+	ret = pwm_set_pulse_dt(&green_pwm_led, PWM_MSEC(5));
+	ret = pwm_set_pulse_dt(&blue_pwm_led, PWM_MSEC(5));
+
+
 	}
 	return 0;
 }
