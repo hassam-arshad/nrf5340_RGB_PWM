@@ -184,64 +184,50 @@ int main(void)
 	}
 
 	while (1) {
-/*
-		for (pulse_red = 0U; pulse_red <= red_pwm_led.period;
-		     pulse_red += STEP_SIZE) {
-			ret = pwm_set_pulse_dt(&red_pwm_led, pulse_red);
-			if (ret != 0) {
-				printk("Error %d: red write failed\n", ret);
-				return 0;
-			}
+		
+		set_rgb_red();
+		k_sleep(K_SECONDS(3));
+		set_rgb_red_2();
+		k_sleep(K_SECONDS(3));
+		set_rgb_red_3();
+		k_sleep(K_SECONDS(3));
+		set_rgb_red_4();
+		k_sleep(K_SECONDS(3));
+		set_rgb_red_5();
+		k_sleep(K_SECONDS(3));
 
-			for (pulse_green = 0U;
-			     pulse_green <= green_pwm_led.period;
-			     pulse_green += STEP_SIZE) {
-				ret = pwm_set_pulse_dt(&green_pwm_led,
-						       pulse_green);
-				if (ret != 0) {
-					printk("Error %d: green write failed\n",
-					       ret);
-					return 0;
-				}
+		set_rgb_blue();
+		k_sleep(K_SECONDS(3));
+		set_rgb_blue_2();
+		k_sleep(K_SECONDS(3));
+		set_rgb_blue_3();
+		k_sleep(K_SECONDS(3));
+		set_rgb_blue_4();
+		k_sleep(K_SECONDS(3));
+		set_rgb_blue_5();
+		k_sleep(K_SECONDS(3));
 
-				for (pulse_blue = 0U;
-				     pulse_blue <= blue_pwm_led.period;
-				     pulse_blue += STEP_SIZE) {
-					ret = pwm_set_pulse_dt(&blue_pwm_led,
-							       pulse_blue);
-					if (ret != 0) {
-						printk("Error %d: "
-						       "blue write failed\n",
-						       ret);
-						return 0;
-					}
-					k_sleep(K_SECONDS(1));
-				}
-			}
-		}
-	*/
-// 	ret = pwm_set_pulse_dt(&red_pwm_led, PWM_MSEC(5));
-// 	ret = pwm_set_pulse_dt(&green_pwm_led, PWM_MSEC(5));
-// 	ret = pwm_set_pulse_dt(&blue_pwm_led, PWM_MSEC(10));
+		set_rgb_green();
+		k_sleep(K_SECONDS(3));
+		set_rgb_green_2();
+		k_sleep(K_SECONDS(3));
+		set_rgb_green_3();
+		k_sleep(K_SECONDS(3));
+		set_rgb_green_4();
+		k_sleep(K_SECONDS(3));
+		set_rgb_green_5();
+		k_sleep(K_SECONDS(3));
 
-// k_sleep(K_SECONDS(5));
-// 	ret = pwm_set_pulse_dt(&red_pwm_led, PWM_MSEC(4));
-// 	ret = pwm_set_pulse_dt(&green_pwm_led, PWM_MSEC(4));
-// 	ret = pwm_set_pulse_dt(&blue_pwm_led, PWM_MSEC(4));
+		set_rgb_white();
+		k_sleep(K_SECONDS(3));
+		set_rgb_white_2();
+		k_sleep(K_SECONDS(3));
+		set_rgb_white_3();
+		k_sleep(K_SECONDS(3));
 
-// k_sleep(K_SECONDS(5));
 
-// 	ret = pwm_set_pulse_dt(&red_pwm_led, PWM_MSEC(1));
-// 	ret = pwm_set_pulse_dt(&green_pwm_led, PWM_MSEC(1));
-// 	ret = pwm_set_pulse_dt(&blue_pwm_led, PWM_MSEC(5));
-
-// 	k_sleep(K_SECONDS(5));
-// 	ret = pwm_set_pulse_dt(&red_pwm_led, PWM_MSEC(5));
-// 	ret = pwm_set_pulse_dt(&green_pwm_led, PWM_MSEC(5));
-// 	ret = pwm_set_pulse_dt(&blue_pwm_led, PWM_MSEC(5));
-
-// Example: Set RGB color to red
-        set_rgb_color(255, 0, 0);
+// Set RGB color to red
+  /*      set_rgb_color(255, 0, 0);
         k_sleep(K_SECONDS(1));
 
         // Example: Set RGB color to green
@@ -269,7 +255,7 @@ int main(void)
 		set_rgb_color(0, 255, 255);
         k_sleep(K_SECONDS(5));
 
-
+*/
 	}
 	return 0;
 }
